@@ -138,7 +138,7 @@ public class HelloApplication extends Application {
         couponB.setOnAction(actionEvent -> {
             String couponCODE = couponTF.getText();
             if (couponCODE.equals("BEYONCE")) {
-                totalTOTAL = totalTOTAL * 0.5;
+                totalTOTAL = totalTOTAL / 2;
                 total.setText("$" + totalTOTAL);
                 couponTF.setPromptText("COUPON APPLIED");
             }
@@ -197,16 +197,8 @@ public class HelloApplication extends Application {
         String quantityS = String.valueOf(quantityCounter);
         subtotalL.setText("$" + subtotalEyelinerS);
         quantity.setText(quantityS);
-    }
-
-    private void updateTotal() {
-        String subtotalEyelinerS = String.format("%.2f", subtotalEyelinerD);
-        String quantityS = String.valueOf(quantityCounter);
-        subtotalL.setText("$" + subtotalEyelinerS);
-        quantity.setText(quantityS);
-        totalTOTAL = totalTOTAL * 0.5;
-        String totalS
-        total.setText("$" + totalTOTAL);
+        total.setText("$" + subtotalEyelinerS);
+        totalTOTAL = subtotalEyelinerD;
     }
 
     public static void main (String[] args) {
